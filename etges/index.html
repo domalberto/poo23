@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO com JS: Classes de Animais</title>
+    <style>
+        body {
+            padding: 10px 20px;
+            color: blue;
+        }
+        
+        label, input, div {
+            display: inline-block;
+        }
+        
+        button {
+            background-color: rgb(0, 0,  0);
+            color: #000000;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: large;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        #mostrar {
+            background-color: azure;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>POO com JS: Classes de Animais :D</h1>
+    <label>Número de Pernas:</label>
+    <input type="number" id="patasInput" placeholder="Só Números">
+    <br>
+    <div id="mostrar"></div>
+    <label>Nome do Animal:</label>
+    <input type="text" id="nomeInput" placeholder="Só Letras">
+    <br>
+    <button onclick="criar()">Criar Animal</button>
+    <br><br>
+    <script>
+        class Animal {
+            constructor(nome, patas) {
+                this.nome = nome;
+                this.patas = patas;
+            }
+        }
+
+        class Cachorro extends Animal {
+            constructor(nome, patas) {
+                super(nome, patas);
+            }
+
+            correr() {
+                document.getElementById("mostrar").innerHTML = `${this.nome} está correndo`;
+            }
+        }
+
+        class Cadeira {
+            constructor(nome) {
+                this.nome = nome;
+            }
+
+            correr() {
+                document.getElementById("mostrar").innerHTML = `${this.nome} é uma cadeira, não pode correr`;
+            }
+        }
+
+        function criar() {
+            let patas = parseInt(document.getElementById("patasInput").value);
+            let nome = document.getElementById("nomeInput").value;
+
+            function criaObjeto() {
+                let respira = prompt("Respira?");
+                if (respira === "sim" || respira === "Sim" || respira === "SIM" || respira === "s" || respira === "S") {
+                    return new Humano(nome);
+                } else {
+                    console.log("Para patas é 2 ou 4 apenas");
+                    return null;
+                }
+            }
+
+            let obj = criaObjeto();
+
+            if (obj === null) {
+                return new Cadeira(nome);
+            } else if (patas === 2) {
+                return new Humano(nome);
+            } else if (patas === 4) {
+                return new Cachorro(nome, 4);
+            } else if (patas === 3) {
+                console.log("Para patas é 2 ou 4 apenas");
+                return null;
+            }
+        }
+    </script>
+</body>
+</html>
