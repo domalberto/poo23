@@ -9,51 +9,68 @@
 </head>
 
 <body>
-    <style>
-        body {
-            background-color: gray;
-            /* cor de fundo cinza */
-        }
-
-        #menu {
-            display: flex;
-            justify-content: center;
-            /* centraliza o menu */
-            width: 50%;
-            /* ocupa metade da tela */
-            margin: 0 auto;
-            /* centraliza o menu horizontalmente */
-            padding: 20px 0;
-        }
-
-        #menu a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            margin: 0 10px;
-            background-color: blue;
-            /* botão azul */
-            transition: background-color 0.5s ease-out;
-            /* suaviza a transição */
-        }
-
-        #menu a:hover {
-            background-color: lightblue;
-            /* ao passar o mouse, fica azul claro */
-        }
-    </style>
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
     </head>
-
+    
     <body>
-        <nav id="menu">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            <a href="#">Link 4</a>
-            <a href="#">Link 5</a>
-            <a href="#">Link 6</a>
-            <a href="#">Link 7</a>
-        </nav>
-    </body>
-
+        <style>
+            body {
+                background-color: gray;
+                /* cor de fundo cinza */
+            }
+    
+            #menu {
+                display: flex;
+                flex-direction: column;
+                /* altera a direção do flex para vertical */
+                justify-content: center;
+                /* centraliza o menu */
+                align-items: center;
+                /* centraliza o menu verticalmente */
+                height: 50%;
+                /* ocupa metade da tela */
+                margin: 0 auto;
+                /* centraliza o menu horizontalmente */
+                padding: 20px 0;
+            }
+    
+            #menu a {
+                display: block;
+                /* permite que os botões tenham altura definida */
+                color: white;
+                text-decoration: none;
+                padding: 10px;
+                margin: 0 0 10px;
+                /* acrescenta uma margem inferior */
+                background-color: blue;
+                /* botão azul */
+                transition: background-color 0.5s ease-out;
+                /* suaviza a transição */
+            }
+    
+            #menu a:hover {
+                background-color: lightblue;
+                /* ao passar o mouse, fica azul claro */
+            }
+        </style>
+        </head>
+    
+        <body>
+            <nav id="menu">
+                <a href="alana/">Alana</a>
+                <a href="etges/">Etges</a>
+                <a href="sonin/">Durigon</a>
+                <a href="bts/">Soares</a>
+                <a href="patrick/">Patrick</a>
+                <a href="pedro/">Pedro</a>
+                <a href="yuri/">Yuri</a>
+            </nav>
+        </body>
 </html>
