@@ -24,11 +24,17 @@ body {
     margin-right: 10px;
   }
 
+  .lista-gastos {
+    margin: 20px;
+  }
+
   table{
     width: 100%;
     border-collapse: collapse;
   }
 
-  th{
-    text-align: center;
+  th, td{
+    border: 1px solid #1e1e1e;
+    padding: 8px;
+    text-align: left;
   }
