@@ -56,3 +56,30 @@ addBtn.addEventListener('click', function() {
     deleteCell.appendChild(deleteBtn);
 
 });
+
+for (const gasto of gastos) {
+    total += gasto.quant;
+    totalCell.textContent = total;
+
+    const novaLinha = gastosBody.insertRow();
+
+    const categoriaCell = novaLinha.insertCell();
+    const quantCell = novaLinha.insertCell();
+    const dataCell = novaLinha.insertCell();
+    const deleteCell = novaLinha.insertCell();
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Deletar';
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.addEventListener('click', function() {
+        gasto.splice(gasto.indexOf(gasto), 1);
+
+        total -= gasto.quant;
+        totalCell.textContent = total;
+
+        gastosBody.removeChild(novaLinha);
+    });
+    categoriaCell.textContent = gasto.categoria;
+    quantCell.textContent = gasto.quant;
+    dataCell.textContent = gasto.data;
+    deleteCell.appendChild(deleteBtn);
+}
