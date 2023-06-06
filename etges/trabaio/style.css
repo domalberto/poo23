@@ -19,6 +19,11 @@ body {
     margin: 20px;
   }
 
+  .select-imput input[type="number"], .input-section input[type="date"] {
+    padding: 5px;
+    margin-right: 10px;
+  }
+
   table{
     width: 100%;
     border-collapse: collapse;
