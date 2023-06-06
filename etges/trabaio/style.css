@@ -7,6 +7,18 @@ body {
     text-align: center;
   }
 
+  .select-imput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .lista-gastos {
+    margin: 20px;
+  }
+
   table{
     width: 100%;
     border-collapse: collapse;
