@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta nome="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registro de Gastos</title>
+</head>
+<body>
+    <h1>Registro de Gastos</h1>
+    <div class="select-imput">
+        <label for="select-categoria">Catrgoria:</label>
+        <select id="select-categoria">
+            <option value="Mercado">Mercado</option>
+            <option value="Contas">Contas</option>
+            <option value="COmpras">Compras</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Transporte">Transporte</option>
+        </select>
+        <label for="imput-quant">Quanto:</label>
+        <input type="number" id="imput-quant">
+        <label for="imput-data">Data:</label>
+        <input type="date" id="imput-data">
+        <button id="add-btn">Add</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
