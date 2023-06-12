@@ -1,64 +1,85 @@
-class Animal {
-    constructor(nome, patas) {
-        this.nome = nome;
-        this.patas = patas;
+let gastos = [];
+let total = 0;
+
+const categoriaSelec = document.getElementById('select-categoria');
+const quantImput = document.getElementById('imput-quant');
+const dataInput = document.getElementById('imput-data');
+const addBtn = document.getElementById('add-btn');
+const gastosBody = document.getElementById('lista-gastos-body');
+const totalCell = document.getElementById('gasto-total');
+
+addBtn.addEventListener('click', function() {
+    const categoria = categoriaSelec.value;
+    const quant = Number(quantImput.value);
+    const data = dataInput.value;
+
+    if (categoria === '') {
+        alert('Por favor selecione uma categoria');
+        return;
     }
-    
-    correr() {
-        document.getElementById("mostrar").innerHTML = this.nome + " está correndo";
-        console.log(`${this.nome} está correndo`);
+    if (isNaN(quant) || quant <=0 ) {
+        alert('Por favor coloque uma quantidade valida')
+        return;
     }
+    if(data === '') {
+        alert('por favor selecione uma data')
+        return;
+    }
+    gastos.push({categoria, quant, data});
+
+    total += quant;
+    totalCell.textContent = total;
+
+    const novaLinha = gastosBody.insertRow();
+
+    const categoriaCell = novaLinha.insertCell();
+    const quantCell = novaLinha.insertCell();
+    const dataCell = novaLinha.insertCell();
+    const deleteCell = novaLinha.insertCell();
+    const deleteBtn = document.createElement('button');
+
+    deleteBtn.textContent = 'Deletar';
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.addEventListener('click', function() {
+        gastos.splice(gastos.indexOf(gastos), 1);
+
+        total -= gastos.quant;
+        totalCell.textContent = total;
+
+        gastosBody.removeChild(novaLinha);
+    });
+
+    const gasto = gastos[gastos.length - 1];
+    categoriaCell.textContent = gasto.categoria;
+    quantCell.textContent = gasto.quant;
+    dataCell.textContent = gasto.data;
+    deleteCell.appendChild(deleteBtn);
+
+});
+
+for (const gasto of gastos) {
+    total += gasto.quant;
+    totalCell.textContent = total;
+
+    const novaLinha = gastosBody.insertRow();
+
+    const categoriaCell = novaLinha.insertCell();
+    const quantCell = novaLinha.insertCell();
+    const dataCell = novaLinha.insertCell();
+    const deleteCell = novaLinha.insertCell();
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Deletar';
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.addEventListener('click', function() {
+        gasto.splice(gasto.indexOf(gasto), 1);
+
+        total -= gasto.quant;
+        totalCell.textContent = total;
+
+        gastosBody.removeChild(novaLinha);
+    });
+    categoriaCell.textContent = gasto.categoria;
+    quantCell.textContent = gasto.quant;
+    dataCell.textContent = gasto.data;
+    deleteCell.appendChild(deleteBtn);
 }
-
-class Cachorro extends Animal {
-    constructor(nome) {
-        super(nome, 4);
-    }
-}
-
-class Humano extends Animal {
-    constructor(nome) {
-        super(nome, 2);
-    }
-}
-
-class Cadeira {
-    constructor(nome, patas) {
-        this.nome = nome;
-        this.patas = patas;
-    }
-
-    correr() {
-        document.getElementById("mostrar").innerHTML = this.nome + " é uma cadeira, não pode correr";
-        console.log("${this.nome} é uma cadeira, não pode correr");
-    }
-}
-
-function criaObjeto() {
-    let nome = document.getElementById("nomeInput").value;
-    let patas = parseInt(document.getElementById("patasInput").value);
-
-    if (patas === 2) {
-        return new Humano(nome);
-    } else if (patas === 4) {
-        let respira = prompt("Respira?");
-        if (respira === "sim" || respira === "Sim" || respira === "SIM" || respira === "s" || respira === "S") {
-            return new Cachorro(nome);
-        }
-        return new Cadeira(nome);
-    } else if (patas === 3) {
-        return new Cadeira(nome);
-    } else {
-        return null;
-    }
-}
-
-function criar() {
-    let obj = criaObjeto();
-    if (obj === null) {
-        console.log("Para patas é 2 ou 4 apenas");
-    } else {
-        obj.correr();
-    }
-}
-

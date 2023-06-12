@@ -1,24 +1,72 @@
 body {
-    background-color: azure;
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+
+  h1, h2 {
     text-align: center;
-}
+  }
 
-h1 {
-    color: blue;
-}
-
-label, input, div {
-    color: #000000;
-    font-size: large;
+  .select-imput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 10px;
-}
+  }
 
-button{
-    background-color: rgb(0, 0, 0);
+  .select-imput label {
+    font-weight: bold;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .lista-gastos {
+    margin: 20px;
+  }
+
+  .select-imput input[type="number"], .select-imput input[type="date"] {
+    padding: 5px;
+    margin-right: 10px;
+  }
+
+  .select-imput button {
+    padding: 5px 10px;
+    background-color: #265b28;
     color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .lista-gastos {
+    margin: 20px;
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td{
+    border: 1px solid #1e1e1e;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #265b28;
+    color: white;
+  }
+
+  tfoot td {
+    font-weight: bold;
+  }
+
+  .delete-btn {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
