@@ -1,24 +1,46 @@
+/* style.css */
+
+/* Estilos gerais */
 body {
-    background-color: azure;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para o canvas do jogo */
+#game-canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+/* Estilos para o título do jogo */
+.title {
     text-align: center;
+    margin-bottom: 20px;
 }
 
-h1 {
-    color: blue;
-}
-
-label, input, div {
-    color: #000000;
-    font-size: large;
-    padding: 10px;
-}
-
-button{
-    background-color: rgb(0, 0, 0);
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
+/* Estilos para os botões do jogo */
+.button {
     display: inline-block;
-    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
 }
