@@ -2,8 +2,6 @@
 
 // Função para carregar o jogo Python no canvas
 function loadGame() {
-    // Incluir código para carregar o jogo Python aqui
-    // Por exemplo:
     const canvas = document.getElementById('game-canvas');
     const ctx = canvas.getContext('2d');
 
