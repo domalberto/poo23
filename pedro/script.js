@@ -1,63 +1,18 @@
-class Animal {
-    constructor(nome, patas) {
-        this.nome = nome;
-        this.patas = patas;
-    }
+// script.js
+
+// Função para carregar o jogo Python no canvas
+function loadGame() {
+    // Incluir código para carregar o jogo Python aqui
+    // Por exemplo:
+    const canvas = document.getElementById('game-canvas');
+    const ctx = canvas.getContext('2d');
     
-    correr() {
-        document.getElementById("mostrar").innerHTML = this.nome + " está correndo";
-        console.log(`${this.nome} está correndo`);
-    }
+    // Exemplo de desenho no canvas
+    ctx.fillStyle = 'red';
+    ctx.fillRect(50, 50, 100, 100);
 }
 
-class Cachorro extends Animal {
-    constructor(nome) {
-        super(nome, 4);
-    }
-}
-
-class Humano extends Animal {
-    constructor(nome) {
-        super(nome, 2);
-    }
-}
-
-class Cadeira {
-    constructor(nome, patas) {
-        this.nome = nome;
-        this.patas = patas;
-    }
-
-    correr() {
-        document.getElementById("mostrar").innerHTML = this.nome + " é uma cadeira, não pode correr";
-        console.log("${this.nome} é uma cadeira, não pode correr");
-    }
-}
-
-function criaObjeto() {
-    let nome = document.getElementById("nomeInput").value;
-    let patas = parseInt(document.getElementById("patasInput").value);
-
-    if (patas === 2) {
-        return new Humano(nome);
-    } else if (patas === 4) {
-        let respira = prompt("Respira?");
-        if (respira === "sim" || respira === "Sim" || respira === "SIM" || respira === "s" || respira === "S") {
-            return new Cachorro(nome);
-        }
-        return new Cadeira(nome);
-    } else if (patas === 3) {
-        return new Cadeira(nome);
-    } else {
-        return null;
-    }
-}
-
-function criar() {
-    let obj = criaObjeto();
-    if (obj === null) {
-        console.log("Para patas é 2 ou 4 apenas");
-    } else {
-        obj.correr();
-    }
-}
+// Executar a função para carregar o jogo quando a página for carregada
+window.onload = function() {
+    loadGame();
+};
