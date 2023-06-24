@@ -1,72 +1,16 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-  }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo Solitaire</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Jogo Solitaire</h1>
 
-  h1, h2 {
-    text-align: center;
-  }
+    <canvas id="game-canvas"></canvas>
 
-  .select-imput {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
-  }
-
-  .select-imput label {
-    font-weight: bold;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-
-  .lista-gastos {
-    margin: 20px;
-  }
-
-  .select-imput input[type="number"], .select-imput input[type="date"] {
-    padding: 5px;
-    margin-right: 10px;
-  }
-
-  .select-imput button {
-    padding: 5px 10px;
-    background-color: #265b28;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  .lista-gastos {
-    margin: 20px;
-  }
-
-  table{
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  th, td{
-    border: 1px solid #1e1e1e;
-    padding: 8px;
-    text-align: left;
-  }
-
-  th {
-    background-color: #265b28;
-    color: white;
-  }
-
-  tfoot td {
-    font-weight: bold;
-  }
-
-  .delete-btn {
-    padding: 5px 10px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+    <script src="script.js"></script>
+    <script src="pedro/solitaire-py-master/main.js"></script>
+</body>
+</html>
